@@ -15,7 +15,7 @@ public class WeatherForecastController : ControllerBase
 
     public WeatherForecastController(ILogger<WeatherForecastController> logger, TodoListDbContext context)
     {
-        _ = context.TodoLists.Add(new TodoListEntity { Id = 1, Title = "straka" });
+        _ = context.TodoLists.Add(new TodoListEntity { Title = "straka" });
         _ = context.SaveChanges();
         _logger = logger;
     }
