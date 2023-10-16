@@ -36,3 +36,7 @@ app.Run();
 
 // dotnet ef migrations add InitialCreate -s ..\TodoListApp.WebApi
 // dotnet ef database update --startup-project ..\TodoListApp.WebApi
+
+
+// c:\Work\garbage\mkrtich91-todo-list-app\TodoListApp.WebApi>dotnet ef migrations add InitialCreate --project ..\TodoListApp.Services.Database
+// c:\Work\garbage\mkrtich91-todo-list-app\TodoListApp.WebApi>dotnet ef database update --project ..\TodoListApp.Services.Database
