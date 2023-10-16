@@ -33,3 +33,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+// dotnet ef migrations add InitialCreate -s ..\TodoListApp.WebApi
+// dotnet ef database update --startup-project ..\TodoListApp.WebApi
