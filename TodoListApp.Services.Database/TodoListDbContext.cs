@@ -9,5 +9,5 @@ public class TodoListDbContext : DbContext
     {
     }
 
-    public DbSet<TodoList> TodoLists { get; set; } = default!;
+    public DbSet<TodoListEntity> TodoLists { get; set; } = default!;
 }
