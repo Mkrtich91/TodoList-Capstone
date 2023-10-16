@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using TodoListApp.Services.Database;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 // Add services to the container.
 
@@ -9,7 +10,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<TodoListDbContext>(options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
+builder.Services.AddDbContext<TodoListDbContext>(options =>
+{
+    _ = options.UseSqlServer(connectionString);
+});
+
+//builder.Services.AddDbContext<TodoListDbContext>(options => options.UseInMemoryDatabase("TodoListDb"));
 
 var app = builder.Build();
 
