@@ -40,6 +40,10 @@ The diagram belows shows the dependencies of C# projects in the expected solutio
 
 ![Solution Design](images/solution-design.png)
 
+* The [Microsoft.EntityFrameworkCore.SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/) package contains Entity Framework provider for SQL Server. If you use another database in your project, add a relevant package for your database.
+* Add the [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools) package if you are going to use the [Package Manager Console tools](https://learn.microsoft.com/en-us/ef/core/get-started/overview/install#get-the-package-manager-console-tools) for migrations.
+* Add the [Microsoft.EntityFrameworkCore.Design ](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design/) package if you are going to use the [Entity Framework Core tools](https://learn.microsoft.com/en-us/ef/core/get-started/overview/install#get-the-entity-framework-core-tools) for migrations.
+
 The class diagram below is an example of using C# projects to store data classes (TodoList), service interfaces (ITodoListService), and service classes (TodoListWebApiService, TodoListDatabaseService).
 
 ![Class Diagram](images/class-diagram-services.png)
