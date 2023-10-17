@@ -1,9 +1,17 @@
-using TodoListApp.Services;
-
-namespace TodoListApp.Services.Database
+namespace TodoListApp.Services.Database;
+public class TodoListDatabaseService : ITodoListService
 {
-    public class TodoListDatabaseService : ITodoListService
+
+    private readonly TodoListDbContext context;
+    public TodoListDatabaseService(TodoListDbContext context)
     {
-        // Your implementation here
+        this.context = context;
     }
+
+    public IEnumerable<TodoList> GetTodoLists()
+    {
+        return this.context.TodoLists.Select(l => new TodoList { Id = l.Id });
+    }
+
+
 }
