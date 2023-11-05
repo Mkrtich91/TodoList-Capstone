@@ -10,8 +10,14 @@ public class TodoListDatabaseService : ITodoListService
 
     public IEnumerable<TodoList> GetTodoLists()
     {
-        return this.context.TodoLists.Select(l => new TodoList { Id = l.Id });
+        return this.context.TodoLists
+         .Select(l => new TodoList
+         {
+             Id = l.Id,
+             Title = l.Title,
+             Description = l.Description,
+             NumberOfTasks = l.NumberOfTasks,
+             IsShared = l.IsShared
+         });
     }
-
-
 }
