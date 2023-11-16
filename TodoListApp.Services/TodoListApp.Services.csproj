@@ -2,22 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <EnableNETAnalyzers>true</EnableNETAnalyzers>
-    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
-    <AnalysisLevel>latest</AnalysisLevel>
-    <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
+    <Nullable>enable</Nullable>
+   <EnableNETAnalyzers>true</EnableNETAnalyzers> 
+   <AnalysisMode>AllEnabledByDefault</AnalysisMode> 
+   <AnalysisLevel>latest</AnalysisLevel> 
+   <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors> 
   </PropertyGroup>
-
-  <ItemGroup>
-    <AdditionalFiles Include="..\stylecop.json" Link="Properties\stylecop.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
 
 </Project>

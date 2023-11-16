@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using TodoListApp.Services.Database;
 
 namespace TodoListApp.WebApi.Controllers;
 [ApiController]
@@ -13,10 +12,8 @@ public class WeatherForecastController : ControllerBase
 
     private readonly ILogger<WeatherForecastController> _logger;
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger, TodoListDbContext context)
+    public WeatherForecastController(ILogger<WeatherForecastController> logger)
     {
-        _ = context.TodoLists.Add(new TodoListEntity { Title = "straka" });
-        _ = context.SaveChanges();
         _logger = logger;
     }
 
