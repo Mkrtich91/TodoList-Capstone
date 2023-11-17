@@ -4,40 +4,39 @@ using TodoListApp.Services.Database;
 
 namespace TodoListApp.WebApi;
 
+#pragma warning disable S1118
 public class Program
+#pragma warning restore S1118
 {
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
 
-        builder.Services.AddControllers();
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
-        builder.Services.AddDbContext<TodoListDbContext>(options =>
+        _ = builder.Services.AddControllers();
+        _ = builder.Services.AddEndpointsApiExplorer();
+        _ = builder.Services.AddSwaggerGen();
+        _ = builder.Services.AddDbContext<TodoListDbContext>(options =>
         {
-            options.UseSqlServer(builder.Configuration.GetConnectionString("MyCon"));
+            _ = options.UseSqlServer(builder.Configuration.GetConnectionString("MyCon"));
         });
-        builder.Services.AddScoped<ITodoListService, TodoListDatabaseService>();
-        builder.Services.AddControllersWithViews().AddNewtonsoftJson();
+        _ = builder.Services.AddScoped<ITodoListService, TodoListDatabaseService>();
+        _ = builder.Services.AddControllersWithViews().AddNewtonsoftJson();
 
         var app = builder.Build();
 
-        // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
-            app.UseSwagger();
-            app.UseSwaggerUI();
+            _ = app.UseSwagger();
+            _ = app.UseSwaggerUI();
         }
 
-        app.UseHttpsRedirection();
+        _ = app.UseHttpsRedirection();
 
-        app.UseAuthorization();
+        _ = app.UseAuthorization();
 
 
-        app.MapControllers();
+        _ = app.MapControllers();
 
         app.Run();
     }

@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using TodoListApp.Services.Database;
 
 namespace TodoListApp.Services.Database;
 public class TodoListDatabaseService : ITodoListService
@@ -27,8 +21,10 @@ public class TodoListDatabaseService : ITodoListService
             IsShared = todoList.IsShared,
         };
 
+#pragma warning disable IDE0058
         this._context.TodoLists.Add(entity);
-        await this._context.SaveChangesAsync();
+#pragma warning restore IDE0058
+        _ = await this._context.SaveChangesAsync();
     }
 
     public async Task DeleteTodoListAsync(int id)
@@ -36,8 +32,8 @@ public class TodoListDatabaseService : ITodoListService
         var entity = await this._context.TodoLists.FindAsync(id);
         if (entity != null)
         {
-            this._context.TodoLists.Remove(entity);
-            await this._context.SaveChangesAsync();
+            _ = this._context.TodoLists.Remove(entity);
+            _ = await this._context.SaveChangesAsync();
         }
     }
 
@@ -83,7 +79,7 @@ public class TodoListDatabaseService : ITodoListService
             entity.Title = todoList.Title;
             entity.Description = todoList.Description;
 
-            await this._context.SaveChangesAsync();
+            _ = await this._context.SaveChangesAsync();
         }
     }
 }

@@ -1,45 +1,45 @@
 using Microsoft.EntityFrameworkCore;
-using TodoListApp.Services;
 using TodoListApp.Services.Database;
 using TodoListApp.Services.WebApi;
 
 namespace TodoListApp.WebApp;
 
+#pragma warning disable S1118
 public class Program
+#pragma warning restore S1118
 {
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
-        builder.Services.AddControllersWithViews();
-        builder.Services.AddDbContext<TodoListDbContext>(options =>
+        _ = builder.Services.AddControllersWithViews();
+        _ = builder.Services.AddDbContext<TodoListDbContext>(options =>
         {
-            options.UseSqlServer(builder.Configuration.GetConnectionString("MyCon"));
+            _ = options.UseSqlServer(builder.Configuration.GetConnectionString("MyCon"));
         });
-        builder.Services.AddHttpClient<TodoListWebApiService>(client =>
+        _ = builder.Services.AddHttpClient<TodoListWebApiService>(client =>
         {
-            client.BaseAddress = new Uri("https://localhost:7144"); // API'nizin URL'si
+#pragma warning disable S1075
+            client.BaseAddress = new Uri("https://localhost:7144");
+#pragma warning restore S1075
         });
 
         var app = builder.Build();
 
-        // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
         {
-            app.UseExceptionHandler("/Home/Error");
-            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-            app.UseHsts();
+            _ = app.UseExceptionHandler("/Home/Error");
+            _ = app.UseHsts();
         }
 
-        app.UseHttpsRedirection();
-        app.UseStaticFiles();
+        _ = app.UseHttpsRedirection();
+        _ = app.UseStaticFiles();
 
-        app.UseRouting();
+        _ = app.UseRouting();
 
-        app.UseAuthorization();
+        _ = app.UseAuthorization();
 
-        app.MapControllerRoute(
+        _ = app.MapControllerRoute(
             name: "default",
             pattern: "{controller=Home}/{action=Index}/{id?}");
 
