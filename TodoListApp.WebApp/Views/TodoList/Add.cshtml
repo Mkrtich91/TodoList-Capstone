@@ -1,0 +1,22 @@
+@model TodoListApp.Services.TodoList
+@{
+    Layout = "_Layout"; ViewBag.Title = "Add a To-do List";
+}
+
+<form asp-action="Add">
+
+    <div class="text-danger" asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="Title">Title:</label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description:</label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Add To-do list</button>
+    </div>
+</form>
