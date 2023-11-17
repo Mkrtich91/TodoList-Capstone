@@ -95,41 +95,11 @@ public class TodoListController : Controller
     [HttpPost]
     public async Task<IActionResult> Update(TodoList updatedTodoList)
     {
-        TodoList todoList = new TodoList();
-#pragma warning disable IDE0009
-        if (ModelState.IsValid)
+        var result = await this._todoListService.UpdateTodoListAsync(updatedTodoList);
+        if (result)
         {
-#pragma warning disable IDE0063 
-            using (var httpClient = new HttpClient())
-            {
-#pragma warning disable IDE0028
-                var content = new MultipartFormDataContent();
-#pragma warning restore IDE0028
-#pragma warning disable IDE0028
-                content.Add(new StringContent(updatedTodoList.Id.ToString()), "Id");
-#pragma warning restore IDE0028
-#pragma warning disable IDE0028
-#pragma warning disable CS8604
-                content.Add(new StringContent(updatedTodoList.Title), "Title");
-#pragma warning restore CS8604
-#pragma warning restore IDE0028
-#pragma warning disable IDE0028
-#pragma warning disable CS8604
-                content.Add(new StringContent(updatedTodoList.Description), "Description");
-#pragma warning restore CS8604
-#pragma warning restore IDE0028
-                using (var response = await httpClient.PutAsync($"https://localhost:7144/api/TodoList/{updatedTodoList.Id}", content))
-                {
-                    string apiResponse = await response.Content.ReadAsStringAsync();
-                    ViewBag.Result = "Success";
-#pragma warning disable CS8600
-                    todoList = JsonConvert.DeserializeObject<TodoList>(apiResponse);
-#pragma warning restore CS8600
-                }
-            }
-#pragma warning restore IDE0063
+            return this.RedirectToAction("Index");
         }
-#pragma warning restore IDE0009
-        return this.View(todoList);
+        return this.View();
     }
 }

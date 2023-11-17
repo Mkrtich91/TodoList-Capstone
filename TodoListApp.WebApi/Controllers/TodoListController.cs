@@ -39,16 +39,11 @@ public class TodoListController : ControllerBase
         return this.CreatedAtAction(nameof(GetTodoListById), new { id = todoList.Id }, todoList);
     }
 
-    [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateTodoList(int id, TodoList todoList)
+    [HttpPost("{todoList.Id}")]
+    public async Task<IActionResult> UpdateTodoList([FromBody] TodoList todoList)
     {
-        if (id != todoList.Id)
-        {
-            return this.BadRequest();
-        }
-
         await this._todoListService.UpdateTodoListAsync(todoList);
-        return this.NoContent();
+        return this.Ok();
     }
 
     [HttpDelete("{id}")]

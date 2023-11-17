@@ -1,4 +1,7 @@
 
+using System.Text;
+using System.Text.Json;
+
 namespace TodoListApp.Services.WebApi
 {
     public class TodoListWebApiService
@@ -24,6 +27,21 @@ namespace TodoListApp.Services.WebApi
 
             var todoList = await response.Content.ReadAsAsync<TodoList>();
             return todoList;
+        }
+
+        public async Task<bool> UpdateTodoListAsync(TodoList todoList)
+        {
+            var json = JsonSerializer.Serialize(todoList);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await this._httpClient.PostAsync($"https://localhost:7144/api/TodoList/{todoList.Id}", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public async Task AddTodoListAsync(TodoList newTodoList)
