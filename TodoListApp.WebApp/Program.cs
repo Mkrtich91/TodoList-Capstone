@@ -23,6 +23,12 @@ public class Program
             client.BaseAddress = new Uri("https://localhost:7144");
 #pragma warning restore S1075
         });
+        _ = builder.Services.AddHttpClient<TodoTaskWebApiService>(client =>
+        {
+#pragma warning disable S1075
+            client.BaseAddress = new Uri("https://localhost:7144");
+#pragma warning restore S1075
+        });
 
         var app = builder.Build();
 

@@ -1,0 +1,43 @@
+@model ModelsTodoTask
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "All Tasks";
+}
+
+<h2>To-do Task</h2>
+<a asp-action="Add" class="btn btn-sm btn-primary">Add To-do task</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>CreatedAt</th>
+            <th>DueDate</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var todoTask in Model.TodoTasks)
+        {
+            <tr>
+                <td>@todoTask.Id</td>
+                <td>@todoTask.Title</td>
+                <td>@todoTask.Description</td>
+                <td>@todoTask.CreatedAt</td>
+                <td>@todoTask.DueDate</td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@todoTask.Id" class="btn btn-warning">Update</a>
+                </td>
+                <td>
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" value="@todoTask.Id" name="id" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

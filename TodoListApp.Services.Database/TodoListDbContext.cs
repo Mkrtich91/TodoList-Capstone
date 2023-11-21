@@ -7,6 +7,7 @@ namespace TodoListApp.Services.Database
 #pragma warning disable CS8618 
         public TodoListDbContext(DbContextOptions<TodoListDbContext> options) : base(options) { }
 #pragma warning restore CS8618 
-        public DbSet<TodoListEntity> TodoLists { get; set; }
+        public DbSet<TodoList> TodoLists { get; set; }
+        public DbSet<TodoTask> TodoTasks { get; set; }
     }
 }

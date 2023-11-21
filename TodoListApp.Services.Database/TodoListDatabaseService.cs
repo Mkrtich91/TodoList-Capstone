@@ -10,9 +10,9 @@ public class TodoListDatabaseService : ITodoListService
         this._context = dbContext;
     }
 
-    public async Task CreateTodoListAsync(TodoList todoList)
+    public async Task CreateTodoListAsync(Services.TodoList todoList)
     {
-        var entity = new TodoListEntity
+        var entity = new TodoList
         {
             Title = todoList.Title,
             Description = todoList.Description,
@@ -37,12 +37,12 @@ public class TodoListDatabaseService : ITodoListService
         }
     }
 
-    public async Task<TodoList?> GetTodoListByIdAsync(int id)
+    public async Task<Services.TodoList?> GetTodoListByIdAsync(int id)
     {
         var entity = await this._context.TodoLists.FindAsync(id);
         if (entity != null)
         {
-            return new TodoList
+            return new Services.TodoList
             {
                 Id = entity.Id,
                 Title = entity.Title,
@@ -56,10 +56,10 @@ public class TodoListDatabaseService : ITodoListService
         return null;
     }
 
-    public async Task<IEnumerable<TodoList>> GetTodoListsAsync()
+    public async Task<IEnumerable<Services.TodoList>> GetTodoListsAsync()
     {
         return await this._context.TodoLists
-            .Select(t => new TodoList
+            .Select(t => new Services.TodoList
             {
                 Id = t.Id,
                 Title = t.Title,
@@ -71,7 +71,7 @@ public class TodoListDatabaseService : ITodoListService
             .ToListAsync();
     }
 
-    public async Task UpdateTodoListAsync(TodoList todoList)
+    public async Task UpdateTodoListAsync(Services.TodoList todoList)
     {
         var entity = await this._context.TodoLists.FindAsync(todoList.Id);
         if (entity != null)

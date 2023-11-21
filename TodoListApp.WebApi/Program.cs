@@ -21,6 +21,7 @@ public class Program
             _ = options.UseSqlServer(builder.Configuration.GetConnectionString("MyCon"));
         });
         _ = builder.Services.AddScoped<ITodoListService, TodoListDatabaseService>();
+        _ = builder.Services.AddScoped<ITodoTaskService, TodoTaskDatabaseService>();
         _ = builder.Services.AddControllersWithViews().AddNewtonsoftJson();
 
         var app = builder.Build();
