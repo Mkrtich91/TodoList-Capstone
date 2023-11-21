@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-09-25T13:19:30.590Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36 Edg/117.0.2045.41" etag="MVjHyLy3n0S-kpGegi7-" version="21.8.1" type="device" pages="5">
+<mxfile host="app.diagrams.net" modified="2023-11-08T13:42:20.337Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.76" etag="JG_cvq_uEvmH6YMqgelI" version="22.0.8" type="device" pages="5">
   <diagram name="architecture" id="R6eDpJADS-D8b3B1f5UI">
-    <mxGraphModel dx="1666" dy="953" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1794" dy="905" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -154,7 +154,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="YNI5sv3WXOpk9R705eF6" name="solution-design">
-    <mxGraphModel dx="2437" dy="908" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2644" dy="905" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -189,7 +189,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="_CMwv9b6OU8Ad90Qr5KC-11" value="Microsoft.EntityFrameworkCore.SqlServer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
-          <mxGeometry x="-290" y="440" width="260" height="60" as="geometry" />
+          <mxGeometry y="320" width="260" height="60" as="geometry" />
         </mxCell>
         <mxCell id="_CMwv9b6OU8Ad90Qr5KC-12" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="hM7JFIb8vGbBTVGwy-LM-3" target="_CMwv9b6OU8Ad90Qr5KC-11" edge="1">
           <mxGeometry x="0.3333" width="50" height="50" relative="1" as="geometry">
@@ -257,11 +257,38 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="td25H0sTE4Pmept_6ynM-1" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="hM7JFIb8vGbBTVGwy-LM-2" target="td25H0sTE4Pmept_6ynM-2" edge="1">
+          <mxGeometry x="0.3333" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-330" y="400" as="sourcePoint" />
+            <mxPoint x="-330" y="460" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="td25H0sTE4Pmept_6ynM-2" value="Microsoft.EntityFrameworkCore.Tools&lt;br&gt;(Package Manager Console tools)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry y="100" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="td25H0sTE4Pmept_6ynM-3" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="hM7JFIb8vGbBTVGwy-LM-2" target="_CMwv9b6OU8Ad90Qr5KC-11" edge="1">
+          <mxGeometry x="0.3333" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-170" y="240" as="sourcePoint" />
+            <mxPoint x="10" y="240" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qavfjLSay3Ohw8And-gj-1" value="Microsoft.EntityFrameworkCore.Design&lt;br&gt;(.NET CLI Tools)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry y="200" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qavfjLSay3Ohw8And-gj-2" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="hM7JFIb8vGbBTVGwy-LM-2" target="qavfjLSay3Ohw8And-gj-1" edge="1">
+          <mxGeometry x="0.3333" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-170" y="230" as="sourcePoint" />
+            <mxPoint x="10" y="213" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="XJHvU4czsujI-eweJfm6" name="class-diagram">
-    <mxGraphModel dx="2066" dy="617" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2644" dy="905" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -335,7 +362,7 @@
         <mxCell id="Q3_KBSQk6tVNmqkJZnIS-25" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;TodoListController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="-780" y="155" width="200" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Q3_KBSQk6tVNmqkJZnIS-26" value="TodoListApp.Services.WebApp" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="Q3_KBSQk6tVNmqkJZnIS-26" value="TodoListApp.WebApp" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="-780" y="120" width="200" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Q3_KBSQk6tVNmqkJZnIS-28" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;dashed=1;strokeColor=#6c8ebf;" parent="1" vertex="1">
@@ -344,7 +371,7 @@
         <mxCell id="Q3_KBSQk6tVNmqkJZnIS-29" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;TodoListController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="140" y="150" width="200" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Q3_KBSQk6tVNmqkJZnIS-30" value="TodoListApp.Services.WebApi" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="Q3_KBSQk6tVNmqkJZnIS-30" value="TodoListApp.WebApi" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="140" y="120" width="200" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Q3_KBSQk6tVNmqkJZnIS-33" value="Uses" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;" parent="1" source="Q3_KBSQk6tVNmqkJZnIS-29" target="Q3_KBSQk6tVNmqkJZnIS-2" edge="1">
@@ -400,7 +427,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="hckCN9eYCBmb-UyHHvb-" name="sitemap">
-    <mxGraphModel dx="1216" dy="617" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1794" dy="939" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -549,7 +576,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="d4tzxNpj0WTFb2eudnHg" name="Page-3">
-    <mxGraphModel dx="2404" dy="905" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2644" dy="939" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
