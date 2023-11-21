@@ -18,6 +18,7 @@ public class TodoTaskDatabaseService : ITodoTaskService
     {
         var entity = new Services.Database.TodoTask
         {
+           TodoListId = todoTask.TodoListId,
             Title = todoTask.Title,
             Description = todoTask.Description
         };
